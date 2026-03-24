@@ -34,7 +34,7 @@
             - The browser still performs a standard HTML form submit (required for LC Tracking).
             - Your SPA dev server isn't required to handle a POST route (avoids "Cannot POST /" errors).
           -->
-          <form class="space-y-6" method="get" action="#">
+          <form class="space-y-6" @submit.prevent="submitForm">
             <!-- First / Last Name -->
             <div class="grid md:grid-cols-2 gap-4">
               <div class="space-y-2">
@@ -43,7 +43,7 @@
                 </label>
                 <input
                   type="text"
-                  name="first_name"
+                  v-model="firstName"
                   autocomplete="given-name"
                   required
                   class="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#FF9900] focus:border-transparent"
@@ -56,7 +56,7 @@
                 </label>
                 <input
                   type="text"
-                  name="last_name"
+                  v-model="lastName"
                   autocomplete="family-name"
                   required
                   class="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#FF9900] focus:border-transparent"
@@ -73,7 +73,7 @@
                 </label>
                 <input
                   type="email"
-                  name="email"
+                  v-model="email"
                   autocomplete="email"
                   required
                   class="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#FF9900] focus:border-transparent"
@@ -86,7 +86,7 @@
                 </label>
                 <input
                   type="email"
-                  name="confirm_email"
+                  v-model="confirmEmail"
                   autocomplete="email"
                   class="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#FF9900] focus:border-transparent"
                   placeholder="Confirm Email"
