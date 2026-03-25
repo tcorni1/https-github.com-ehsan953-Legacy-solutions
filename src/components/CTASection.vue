@@ -347,13 +347,23 @@
 </template>
 
 <script lang="ts">
-import { defineComponent, onMounted } from 'vue';
+import { defineComponent, onMounted, ref } from 'vue';
 
 export default defineComponent({
   name: 'CTASection',
   setup() {
+    const companyName = ref('');
+
     onMounted(() => {
       const elements = document.querySelectorAll('.fadeInUp, .fadeInUp2s');
+      // keep all your existing animation code here
+    });
+
+    return {
+      companyName,
+    };
+  }
+});
 
       const observer = new IntersectionObserver(
         (entries, observer) => {
