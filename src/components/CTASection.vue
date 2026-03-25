@@ -276,7 +276,7 @@
                 </label>
                 <input
                   type="text"
-                  name="company_name"
+                  v-model="companyName"
                   autocomplete="organization"
                   class="w-full rounded-lg border border-gray-300 px-3 py-2 text-sm focus:outline-none focus:ring-2 focus:ring-[#FF9900] focus:border-transparent"
                   placeholder="Company Name"
